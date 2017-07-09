@@ -1,0 +1,16 @@
+<div class="home">
+  <h1>zip-code-town DEMO</h1>
+  <h2>Saisie d'une ville par son code postal</h2>
+  <br />
+  <div class="section">
+    <zip-code-town zip-code-town="$ctrl.zipCodeTown"></zip-code-town>
+  </div>
+  <ul class="section" ng-if="$ctrl.zipCodeTown.town">
+    <li>Votre sélection:
+      <ul class="selection">
+        <li>Code postal : {{ $ctrl.zipCodeTown.zipCode }}</li>
+        <li>Ville : {{ $ctrl.zipCodeTown.town }}</li>
+        </ul>
+    </li>
+  </ul>
+</div>

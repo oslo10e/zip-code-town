@@ -1,0 +1,45 @@
+@import '../../common';
+
+$result-color: $darkTextColor;
+$result-color-over: $accentColor;
+$result-background-over: white;
+
+.zip-code-town {
+  .town-wrapper {
+    position: relative;
+    display: inline-block;
+    .town {
+      opacity: 1;
+      transition: opacity 0.4s;
+    }
+    .results {
+      position: absolute;
+      width: 400px;
+      top: -0.4rem;
+      left: -0.4rem;
+      display: inline-block;
+      .result {
+        cursor: pointer;
+        padding: 0.4rem;
+        color: $result-color;
+        &:hover {
+          color: $result-color-over;
+          background: $result-background-over;
+        }
+        &.no-result {
+          color: $result-color-over;
+        }
+      }
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    &.results-visible {
+      .town {
+        opacity: 0;
+      }
+      .results {
+        opacity: 1;
+      }
+    }
+  }
+}

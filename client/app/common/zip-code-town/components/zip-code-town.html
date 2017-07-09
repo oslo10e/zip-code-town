@@ -1,0 +1,23 @@
+<div class="zip-code-town">
+  <span>Code postal :</span>
+    <input ng-model="$ctrl.zipCode"
+           ng-change="$ctrl.zipCodeChange()"
+           ng-focus="$ctrl.zipCodeFocus()"
+           ng-blur="$ctrl.zipCodeBlur()"
+           placeholder="Entrez le code postal" />
+  <span>Ville :</span>
+  <span class="town-wrapper"
+        ng-class="{'results-visible': $ctrl.resultsVisible}">
+    <ul class="results">
+      <li class="result"
+          ng-click="$ctrl.clickZipCodeTown(zipCodeTown)"
+          ng-repeat="zipCodeTown in $ctrl.zipCodeTowns track by $index">
+        {{ zipCodeTown.town }} ({{ zipCodeTown.zipCode }})
+      </li>
+      <li class="result no-result" ng-if="$ctrl.noResult">Aucune ville ne correspond à ce code postal</li>
+    </ul>
+    <span class="town">{{ $ctrl.zipCodeTown.town }}
+      <span ng-show="$ctrl.zipCodeTown.zipCode">({{ $ctrl.zipCodeTown.zipCode }})</span></span>
+    &nbsp;
+  </span>
+</div>
